@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<section>
+    <div class="card mr-3 ml-3" >
+        <div class="card-body">
+
+            <h1 class="text-center">Edit Books</h1>
+
+            <div class="contaioner-fluid mt-1">
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form action="#" th:object="${books}"
+
+                              method="get"
+                              th:action="@{/save}"
+                              class="mt-2" >
+
+                            <!--       Id field -->
+                            <div class="input-group mt-3">
+                                <input type="text" id="bookid" th:field="*{bookid}" readonly="readonly" placeholder=" " class="form-control">
+                            </div>
+
+
+                            <!-- BookName -->
+
+
+                            <div class="input-group mt-3">
+                                <input type="text" id="name" th:field="*{bookname}"  placeholder="Enter Bookname here" class="form-control">
+                            </div>
+
+                            <!-- this is author field -->
+
+                            <div class="input-group mt-3">
+                                <input required   type="text" id="author" th:field="*{author}"  placeholder="Enter author Number here" class="form-control">
+                            </div>
+
+                            <!--price field  -->
+
+                            <div class="input-group mt-3">
+                                <input required type="text" id="price" th:field="*{price}"   placeholder="Enter price here" class="form-control">
+                            </div>
+                            <div class="container text-center mt-3">
+                                <button type="submit" class="btn btn-outline-primary" >Save Contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
